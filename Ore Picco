@@ -1,0 +1,14 @@
+//Funzione Calcola Ore picco in un mese (data del mese passata come parametro. formato 01/mm/aaaa)
+
+(DateStart as date)  =>
+
+	let
+		//Variabili test
+		//DateStart = #date(2021,1,1),
+
+		Origine = List.Dates( DateStart, Date.DaysInMonth(DateStart), #duration(1, 0, 0, 0) ),
+		Creo_Tabella = Table.FromColumns( { Origine }, {"DATE"} ),
+		AGGIUNGO.GiornoSettimana = Table.AddColumn(Creo_Tabella, "ORE PK", each if Date.DayOfWeek([DATE]) < 5 then 12 else 0, Int64.Type),
+		Ore_Peak = List.Sum(AGGIUNGO.GiornoSettimana[ORE PK])
+	in
+		Ore_Peak
