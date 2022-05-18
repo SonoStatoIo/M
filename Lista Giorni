@@ -1,0 +1,7 @@
+// Funzione che restituisce la lista dei giorni tra due date
+
+(DataInizio as date,  DataFine as date) =>
+    let
+        Lista_giorni = List.Dates(DataInizio, Duration.Days(DataFine - DataInizio) + 1, #duration(1,0,0,0))
+in
+    Lista_giorni
