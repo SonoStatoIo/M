@@ -1,0 +1,11 @@
+// Funzione che identifica ore di PK e OP
+// Paramentri in input Data e Ora (1-24)
+let
+    Origine = (Data as date, Ora as number) =>
+
+let
+    PK.OP = if ( Date.DayOfWeek(Data, Day.Monday) < 5 and Ora >= 9 and Ora <= 20 ) then "PK" else "OP"
+in
+    PK.OP
+in
+    Origine
