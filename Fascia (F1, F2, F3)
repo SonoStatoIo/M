@@ -1,0 +1,13 @@
+// Funzione che determina le Fasce orarie (Mercato elettrico)
+// Parametri in input Data e Ora (1-24)
+let
+    Origine = (Data as date, Ora as number) =>
+
+let
+    FASCIA = if ( Date.DayOfWeek(Data, Day.Monday) < 5 and Ora > 8 and Ora <= 19 ) then "F1" else 
+             if ( ( Date.DayOfWeek(Data, Day.Monday) < 5 and ( Ora = 8 or ( Ora >= 20 and Ora < 24 ) ) ) or 
+                ( Date.DayOfWeek(Data, Day.Monday) = 5 and Ora >= 1 and Ora <= 8  ) ) then "F2" else "F3"
+in
+    FASCIA
+in
+    Origine
