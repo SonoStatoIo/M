@@ -1,0 +1,10 @@
+// Funzione restituisce la lista dei dei mesi (Inizio Mese 01/mm/aaaa) tra due date
+
+(DataInizio as date,  DataFine as date) =>
+    let
+        //Variabili Test
+        //DataInizio = #date(2020, 1, 1), DataFine = #date(2020, 12, 1),
+
+        Lista_mesi = List.Generate( () => DataInizio, each _ <= DataFine, each Date.AddMonths(_, 1) )
+in
+    Lista_mesi
